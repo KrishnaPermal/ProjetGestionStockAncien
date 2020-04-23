@@ -15,19 +15,29 @@ class CommandesFournisseursSeeder extends Seeder
         $array = [
             [
                 "id" => 1,
-                "nom" => "Fournisseur 1",
+                "numero_commande" => 1252,
+                "date" => "2020-01-01",
+                "quantité" => 50
+                
             ],
             [
                 "id" => 2,
-                "nom" => "Fournisseur 2",
+                "numero_commande" => 5214,
+                "date" => "2020-01-02",
+                "quantité" => 100
             ],
             [
                 "id" => 3,
-                "nom" => "Fournisseur 3",
+                "numero_commande" => 6325,
+                "date" => "2020-01-03",
+                "quantité" => 150
             ],
             [
                 "id" => 4,
-                "nom" => "Fournisseur 4",
+                "numero_commande" => 3548,
+                "date" => "2020-01-04",
+                "quantité" => 200
+               
             ],
         ];
 

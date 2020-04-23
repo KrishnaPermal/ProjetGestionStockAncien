@@ -14,9 +14,17 @@ class CreateCommandesTable extends Migration
     public function up()
     {
         Schema::create('commandes', function (Blueprint $table) {
-            $table->id();
-            $table->bigInteger('id_client')->unsigned();
+            //$table->bigIncrements('id');
+
+            $table->unsignedBigInteger('id_client');
             $table->foreign('id_client')->references('id')->on('client');
+        
+            $table->unsignedBigInteger('id_commandes');
+            $table->foreign('id_commandes')->references('id')->on('commandes');
+    
+            $table->timestamps();
+
+    
         });
     }
 
@@ -27,6 +35,7 @@ class CreateCommandesTable extends Migration
      */
     public function down()
     {
+
         Schema::dropIfExists('commandes');
     }
 }

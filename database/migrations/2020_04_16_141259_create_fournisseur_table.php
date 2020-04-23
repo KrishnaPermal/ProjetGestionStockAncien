@@ -18,8 +18,7 @@ class CreateFournisseurTable extends Migration
             $table->string('nom',255);
             $table->string('prenom',255);
             $table->string('tel',255);
-            $table->string('mail',255);
-            $table->timestamps();
+            $table->string('email',255);
         });
     }
 

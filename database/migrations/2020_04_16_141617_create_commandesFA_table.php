@@ -15,16 +15,27 @@ class CreatecommandesFATable extends Migration
     {
         Schema::create('commandesFA', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('quantité',255);
+            $table->timestamps();
 
-            $table->bigInteger('id_articles')->unsigned();
-            $table->foreign('id_articles')->references('id')->on('articles');
-
-            $table->bigInteger('id_commandes_fournisseurs')->unsigned();
-            $table->foreign('id_commandes_fournisseurs')->references('id')->on('commandes_fournisseurs');
+    //Nous créeons des champs vides
+            $table->unsignedBigInteger('id_articles');
+            $table->unsignedBigInteger('id_commandes_fournisseurs');
+            
+            $table->timestamps();
         });
+
+
+    //N'oublions pas de rajouter la clé étrangère
+        Schema::table('commandesFA', function($table) {
+  
+            $table->foreign('id_articles')->references('id')->on('articles');
+            $table->foreign('id_commandes_fournisseurs')->references('id')->on('commandes_fournisseurs');
+
+        });
+    
     }
+    
 
     /**
      * Reverse the migrations.
@@ -33,6 +44,28 @@ class CreatecommandesFATable extends Migration
      */
     public function down()
     {
+        
+        Schema::table('commandesFA', function (Blueprint $table) {
+     
+            Schema::disableForeignKeyConstraints();
+
+            $table->dropIfExists('id_articles');
+            $table->dropIfExists('id_commandesFA');
+          
+          
+    
+           Schema::enableForeignKeyConstraints();
+       });
+        
+
         Schema::dropIfExists('commandesFA');
     }
+
+
+
+
+
+
+
+
 }

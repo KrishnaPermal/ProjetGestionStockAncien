@@ -17,17 +17,19 @@ class CreateCommandesHasArticlesTable extends Migration
             $table->id();
             $table->string('quantité',255);
             $table->timestamps();
-
-            $table->bigInteger('id_articles')->unsigned();
-            $table->foreign('id_articles')->references('id')->on('articles');
-
-            $table->bigInteger('id_commandes')->unsigned();
-            $table->foreign('id_commandes')->references('id')->on('commandes');
         });
 
+    
+        Schema::create('commande_articles', function(Blueprint $table) {
+            $table->unsignedBigInteger('id_articles');
+            $table->foreign('id_articles')->references('id')->on('articles');
         
+            $table->unsignedBigInteger('id_commandes');
+            $table->foreign('id_commandes')->references('id')->on('commandes');
+        });
     }
 
+    
     /**
      * Reverse the migrations.
      *
@@ -35,6 +37,14 @@ class CreateCommandesHasArticlesTable extends Migration
      */
     public function down()
     {
+        
+        Schema::table('commande_articles', function (Blueprint $table) {
+            Schema::disableForeignKeyConstraints();
+            $table->dropForeign('commande_articles_id_articles_foreign');
+            $table->drop('id_articles');
+            Schema::enableForeignKeyConstraints();
+       });
+
         Schema::dropIfExists('commandes_has_articles');
     }
 }

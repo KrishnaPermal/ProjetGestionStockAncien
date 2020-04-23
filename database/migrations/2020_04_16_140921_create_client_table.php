@@ -19,9 +19,9 @@ class CreateClientTable extends Migration
             $table->string('prenom',255);
             $table->string('adresse',255);
             $table->string('code_postale',255);
-            $table->string('email',255);
             $table->string('telephone',255);
-            $table->timestamps();
+            $table->string('email',255);
+            $table->timestamp('email_verified_at')->nullable();
         });
     }
 

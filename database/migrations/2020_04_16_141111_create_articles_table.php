@@ -23,14 +23,13 @@ class CreateArticlesTable extends Migration
             $table->string('quantité',255);
             $table->string('prix',255);
             $table->string('photo');
-            $table->timestamps();
-
-            $table->bigInteger('id_categorie')->unsigned();
+            $table->unsignedBigInteger('id_categorie');
             $table->foreign('id_categorie')->references('id')->on('articles');
+            $table->timestamps();   
+    
         });
 
-
-
+  
     }
 
     /**
@@ -40,6 +39,7 @@ class CreateArticlesTable extends Migration
      */
     public function down()
     {
+        
         Schema::dropIfExists('articles');
     }
 }
