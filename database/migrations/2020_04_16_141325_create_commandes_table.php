@@ -13,19 +13,26 @@ class CreateCommandesTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
+        //Schema::enableForeignKeyConstraints();
         Schema::create('commandes', function (Blueprint $table) {
             //$table->bigIncrements('id');
-
-            $table->unsignedBigInteger('id_client');
-            $table->foreign('id_client')->references('id')->on('client');
-        
-            $table->unsignedBigInteger('id_commandes');
-            $table->foreign('id_commandes')->references('id')->on('commandes');
-    
+            $table->unsignedBigInteger('id_client')->unsigned();
+            $table->unsignedBigInteger('commandes_id_commandes')->unsigned();
             $table->timestamps();
-
-    
         });
+
+        Schema::table('commandes', function (Blueprint $table) {
+            $table->foreign('id_client')->references('id')->on('clients');
+        });
+
+        Schema::table('commandes', function (Blueprint $table) {
+            $table->foreign('commandes_id_commandes')->references('id')->on('commandes');
+        });
+
+
+
+
     }
 
     /**
@@ -36,6 +43,18 @@ class CreateCommandesTable extends Migration
     public function down()
     {
 
+
+        Schema::table('commandes', function (Blueprint $table) {
+            Schema::disableForeignKeyConstraints();
+            $table->dropForeign(['id_client']);
+            $table->dropIfExists('id_client');
+            $table->dropForeign(['commandes_id_commandes']);
+            $table->dropIfExists('commandes_id_commandes');
+            Schema::enableForeignKeyConstraints();
+        });
+
         Schema::dropIfExists('commandes');
+        
     }
 }
+

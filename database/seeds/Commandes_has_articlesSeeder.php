@@ -16,12 +16,12 @@ class Commandes_has_articlesSeeder extends Seeder
             [   
                 "id_articles" => 1,
                 "id_commandes" => 1,
-                "quantité" => "max"
+                "quantité" => 1
             ],
             [   
                 "id_articles" => 2,
                 "id_commandes" => 2,
-                "quantité" => "min"
+                "quantité" => 1
             ]
         ];
 

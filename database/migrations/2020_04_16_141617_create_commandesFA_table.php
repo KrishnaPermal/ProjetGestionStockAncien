@@ -13,26 +13,23 @@ class CreatecommandesFATable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
+        //Schema::enableForeignKeyConstraints();
         Schema::create('commandesFA', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedBigInteger('id_commandes_fournisseurs')->unsigned();
+            $table->unsignedBigInteger('id_article')->unsigned();
             $table->string('quantité',255);
             $table->timestamps();
-
-    //Nous créeons des champs vides
-            $table->unsignedBigInteger('id_articles');
-            $table->unsignedBigInteger('id_commandes_fournisseurs');
-            
-            $table->timestamps();
         });
 
-
-    //N'oublions pas de rajouter la clé étrangère
-        Schema::table('commandesFA', function($table) {
-  
-            $table->foreign('id_articles')->references('id')->on('articles');
+        Schema::table('commandesFA', function (Blueprint $table) {
             $table->foreign('id_commandes_fournisseurs')->references('id')->on('commandes_fournisseurs');
-
         });
+
+        Schema::table('commandesFA', function (Blueprint $table) {
+            $table->foreign('id_article')->references('id')->on('articles');
+        });
+        
     
     }
     
@@ -46,26 +43,15 @@ class CreatecommandesFATable extends Migration
     {
         
         Schema::table('commandesFA', function (Blueprint $table) {
-     
-            Schema::disableForeignKeyConstraints();
+            $table->dropForeign(['id_commandes_fournisseurs']);
+            $table->dropIfExists('id_commandes_fournisseurs');
+        });
 
-            $table->dropIfExists('id_articles');
-            $table->dropIfExists('id_commandesFA');
-          
-          
-    
-           Schema::enableForeignKeyConstraints();
-       });
-        
+        Schema::table('echanges', function (Blueprint $table) {
+            $table->dropForeign(['id_article']);
+            $table->dropIfExists('id_article');
+        });
 
         Schema::dropIfExists('commandesFA');
     }
-
-
-
-
-
-
-
-
 }

@@ -13,23 +13,20 @@ class CreateCommandesFournisseursTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
+        //Schema::enableForeignKeyConstraints();
         Schema::create('commandes_fournisseurs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('numero_commande',255);
             $table->dateTime('date');
             $table->string('quantité',255);
+            $table->unsignedBigInteger('id_fournisseur')->unsigned();
             $table->timestamps();
         });   
 
-    
-        Schema::table('fournisseur', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_fournisseur');
+        Schema::table('commandes_fournisseurs', function (Blueprint $table) {
+            $table->foreign('id_fournisseur')->references('id')->on('fournisseur');
         });
-            
-        Schema::table('fournisseur', function (Blueprint $table) {
-            $table->foreign('id_fournisseur')->references('id')->on('commandes_fournisseurs');
-        });
-   
     }
 
     /**
@@ -39,15 +36,18 @@ class CreateCommandesFournisseursTable extends Migration
      */
     public function down()
     {
-        
-        Schema::table('fournisseur', function (Blueprint $table) {
-            Schema::disableForeignKeyConstraints();
-            $table->dropForeign(['id_fournisseur']);
-            $table->dropIfExists('id_fournisseur');
-       });
-          
+             
+       Schema::table('commandes_fournisseurs', function (Blueprint $table) {
+        $table->dropForeign(['id_fournisseur']);
+        $table->dropIfExists('id_fournisseur');
+    });
+
         Schema::dropIfExists('commandes_fournisseurs');
 
     }
 
 }
+
+
+
+   

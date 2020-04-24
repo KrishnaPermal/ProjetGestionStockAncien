@@ -15,11 +15,11 @@ class CommandesFASeeder extends Seeder
         $array = [
             [   
                 "id" => 1,
-                "quantité" => "max"
+                "quantité" => 1
             ],
             [   
                 "id" => 2,
-                "quantité" => "min"
+                "quantité" => 2
             ]
         ];
 

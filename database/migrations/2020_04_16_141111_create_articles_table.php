@@ -13,6 +13,8 @@ class CreateArticlesTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
+        //Schema::enableForeignKeyConstraints();
         Schema::create('articles', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('réf_article',255);
@@ -23,14 +25,17 @@ class CreateArticlesTable extends Migration
             $table->string('quantité',255);
             $table->string('prix',255);
             $table->string('photo');
-            $table->unsignedBigInteger('id_categorie');
-            $table->foreign('id_categorie')->references('id')->on('articles');
+            $table->unsignedBigInteger('id_catégorie')->unsigned();
             $table->timestamps();   
     
         });
 
-  
+        Schema::table('articles', function (Blueprint $table) {
+            $table->foreign('id_catégorie')->references('id')->on('categorie');
+        });
+
     }
+
 
     /**
      * Reverse the migrations.
@@ -40,6 +45,12 @@ class CreateArticlesTable extends Migration
     public function down()
     {
         
+        Schema::table('echanges', function (Blueprint $table) {
+            $table->dropForeign(['id_catégorie']);
+            $table->dropIfExists('id_catégorie');
+        });
+
+
         Schema::dropIfExists('articles');
     }
 }

@@ -13,20 +13,23 @@ class CreateCommandesHasArticlesTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
+        //Schema::enableForeignKeyConstraints();
         Schema::create('commandes_has_articles', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedBigInteger('id_commandes')->unsigned();
+            $table->unsignedBigInteger('id_article')->unsigned();
             $table->string('quantité',255);
             $table->timestamps();
         });
 
-    
-        Schema::create('commande_articles', function(Blueprint $table) {
-            $table->unsignedBigInteger('id_articles');
-            $table->foreign('id_articles')->references('id')->on('articles');
-        
-            $table->unsignedBigInteger('id_commandes');
+        Schema::table('commandes_has_articles', function (Blueprint $table) {
             $table->foreign('id_commandes')->references('id')->on('commandes');
         });
+
+        Schema::table('commandes_has_articles', function (Blueprint $table) {
+            $table->foreign('id_article')->references('id')->on('articles');
+        });
+        
     }
 
     
@@ -38,13 +41,17 @@ class CreateCommandesHasArticlesTable extends Migration
     public function down()
     {
         
-        Schema::table('commande_articles', function (Blueprint $table) {
-            Schema::disableForeignKeyConstraints();
-            $table->dropForeign('commande_articles_id_articles_foreign');
-            $table->drop('id_articles');
-            Schema::enableForeignKeyConstraints();
-       });
+        Schema::table('commandes_has_articles', function (Blueprint $table) {
+            $table->dropForeign(['id_commandes']);
+            $table->dropIfExists('id_commandes');
+        });
+
+        Schema::table('echanges', function (Blueprint $table) {
+            $table->dropForeign(['id_article']);
+            $table->dropIfExists('id_article');
+        });
 
         Schema::dropIfExists('commandes_has_articles');
     }
 }
+
