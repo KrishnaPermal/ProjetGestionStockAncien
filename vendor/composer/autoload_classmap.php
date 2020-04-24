@@ -90,7 +90,6 @@ return array(
     'Carbon\\Translator' => $vendorDir . '/nesbot/carbon/src/Carbon/Translator.php',
     'CategorieSeeder' => $baseDir . '/database/seeds/CategorieSeeder.php',
     'ClientsSeeder' => $baseDir . '/database/seeds/ClientsSeeder.php',
-    'CommandeArticlesSeeder' => $baseDir . '/database/seeds/CommandeArticlesSeeder.php',
     'CommandesFASeeder' => $baseDir . '/database/seeds/CommandesFASeeder.php',
     'CommandesFournisseursSeeder' => $baseDir . '/database/seeds/CommandesFournisseursSeeder.php',
     'CommandesSeeder' => $baseDir . '/database/seeds/CommandesSeeder.php',

@@ -16,7 +16,6 @@ class DatabaseSeeder extends Seeder
             ArticlesSeeder::class,
             CategorieSeeder::class,
             ClientsSeeder::class,
-            CommandeArticlesSeeder::class,
             CommandesFournisseursSeeder::class,
             CommandesSeeder::class,
             FournisseurSeeder::class,

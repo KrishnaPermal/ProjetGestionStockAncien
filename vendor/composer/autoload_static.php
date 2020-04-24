@@ -539,7 +539,6 @@ class ComposerStaticInitfc730f5ba9b92368640cb32e59bd91c8
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
         'CategorieSeeder' => __DIR__ . '/../..' . '/database/seeds/CategorieSeeder.php',
         'ClientsSeeder' => __DIR__ . '/../..' . '/database/seeds/ClientsSeeder.php',
-        'CommandeArticlesSeeder' => __DIR__ . '/../..' . '/database/seeds/CommandeArticlesSeeder.php',
         'CommandesFASeeder' => __DIR__ . '/../..' . '/database/seeds/CommandesFASeeder.php',
         'CommandesFournisseursSeeder' => __DIR__ . '/../..' . '/database/seeds/CommandesFournisseursSeeder.php',
         'CommandesSeeder' => __DIR__ . '/../..' . '/database/seeds/CommandesSeeder.php',
