@@ -11,7 +11,7 @@ class CreateClientTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up() //ici on a le code de création de la table et de ses colonnes 
     {
         Schema::create('client', function (Blueprint $table) {
             $table->bigIncrements('id');
@@ -30,7 +30,7 @@ class CreateClientTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down() //ici on a le code de suppression de la table
     {
         Schema::dropIfExists('client');
     }

@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+//Dashboard
+Route::prefix('dashboard')->group(function () {
+    Route::get('articles', 'ArticlesController@index');
+    Route::post('articles', 'ArticlesController@add');
+    Route::delete('articles/{id}', 'ArticlesController@delete');
+    Route::put('articles/{id}', 'ArticlesController@update');
+    Route::get('clients','ClientsController@index');
 });
