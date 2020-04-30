@@ -19,7 +19,7 @@ class CreateCommandesFournisseursTable extends Migration
             $table->bigIncrements('id');
             $table->string('numero_commande',255);
             $table->dateTime('date');
-            $table->string('quantité',255);
+            $table->string('quantite',255);
             $table->unsignedBigInteger('id_fournisseur')->unsigned();
             $table->timestamps();
         });   

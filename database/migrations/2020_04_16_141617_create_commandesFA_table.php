@@ -18,7 +18,7 @@ class CreatecommandesFATable extends Migration
         Schema::create('commandesFA', function (Blueprint $table) {
             $table->unsignedBigInteger('id_commandes_fournisseurs')->unsigned();
             $table->unsignedBigInteger('id_article')->unsigned();
-            $table->string('quantité',255);
+            $table->string('quantite',255);
             $table->timestamps();
         });
 

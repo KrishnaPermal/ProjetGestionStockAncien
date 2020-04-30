@@ -31,11 +31,11 @@ class ActivitiesController extends Controller
         $data = Validator::make(
             $request->input(),
             [
-                "réf_article" => "required",
+                "ref_article" => "required",
                 "designation" => "required",
                 "description" => "required",
                 "fournisseur" => "required",
-                "quantité" => "required",
+                "quantite" => "required",
                 "prix" => "required",
             ],
             [
@@ -68,11 +68,11 @@ class ActivitiesController extends Controller
         $dataEdit = Validator::make(
             $request->input(),
             [
-                "réf_article" => "required",
+                "ref_article" => "required",
                 "designation" => "required",
                 "description" => "required",
                 "fournisseur" => "required",
-                "quantité" => "required",
+                "quantite" => "required",
                 "prix" => "required",
             ],
             [
@@ -83,11 +83,11 @@ class ActivitiesController extends Controller
         $data = Articles::where('id', '=', $id)
             ->first();
 
-        $data->réf_article = $dataEdit['réf_article'];
+        $data->ref_article = $dataEdit['ref_article'];
         $data->designation = $dataEdit['designation'];
         $data->description = $dataEdit['description'];
         $data->fournisseur = $dataEdit['fournisseur'];
-        $data->quantité = $dataEdit['quantité'];
+        $data->quantite = $dataEdit['quantite'];
         $data->prix = $dataEdit['prix'];
         $data->save();
 

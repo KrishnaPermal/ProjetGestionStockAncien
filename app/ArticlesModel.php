@@ -7,15 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Articles extends Model
 {
     protected $table = 'articles';
-    protected $fillable = ['réf_article','designation','description','fournisseur','quantité','prix'];
+    protected $fillable = ['ref_article','designation','description','fournisseur','quantite','prix'];
     public $timestamps = false;
 
 
 
 
-    public function catégorie()
+    public function categorie()
     {
-        return $this->belongsTo('App\Catégorie');
+        return $this->belongsTo('App\Categorie');
     }
 
     public function commandes()

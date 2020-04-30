@@ -18,7 +18,7 @@ class CreateCommandesHasArticlesTable extends Migration
         Schema::create('commandes_has_articles', function (Blueprint $table) {
             $table->unsignedBigInteger('id_commandes')->unsigned();
             $table->unsignedBigInteger('id_article')->unsigned();
-            $table->string('quantité',255);
+            $table->string('quantite',255);
             $table->timestamps();
         });
 

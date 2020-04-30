@@ -14,12 +14,14 @@ class CommandesFASeeder extends Seeder
     {
         $array = [
             [   
-                "id" => 1,
-                "quantité" => 1
+                "id_commandes_fournisseurs" => 1,
+                "id_article" => 1,
+                "quantite" => 1
             ],
             [   
-                "id" => 2,
-                "quantité" => 2
+                "id_commandes_fournisseurs" => 2,
+                "id_article" => 2,
+                "quantite" => 2
             ]
         ];
 

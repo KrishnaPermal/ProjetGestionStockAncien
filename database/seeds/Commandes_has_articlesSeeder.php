@@ -14,14 +14,14 @@ class Commandes_has_articlesSeeder extends Seeder
     {
         $array = [
             [   
-                "id_articles" => 1,
+                "id_article" => 1,
                 "id_commandes" => 1,
-                "quantité" => 1
+                "quantite" => 1
             ],
             [   
-                "id_articles" => 2,
+                "id_article" => 2,
                 "id_commandes" => 2,
-                "quantité" => 1
+                "quantite" => 1
             ]
         ];
 

@@ -21,7 +21,7 @@ class ClientsSeeder extends Seeder
                 "adresse" => "7 chemin var,",
                 "code_postale" => "97419 LA POSSESSION",
                 "email" => "taylor.james974@gmail.com",
-                "tel" => "0692154219",
+                "telephone" => "0692154219",
                 
             ],
 
@@ -32,7 +32,7 @@ class ClientsSeeder extends Seeder
                 "adresse" => "12 Bis av Leconte de Lisle,Ste Clotilde,",
                 "code_postale" => "97490 SAINT-DENIS",
                 "email" => "miller.john974@gmail.com",
-                "tel" => "0692185672",
+                "telephone" => "0692185672",
                 
             ],
 
@@ -43,7 +43,7 @@ class ClientsSeeder extends Seeder
                 "adresse" => "72 Bis r Marius et Ary Leblond,",
                 "code_postale" => "97410 SAINT-PIERRE",
                 "email" => "rodriguez.liam974@gmail.com",
-                "tel" => "0692758912",
+                "telephone" => "0692758912",
                 
             ],
 
@@ -54,7 +54,7 @@ class ClientsSeeder extends Seeder
                 "adresse" => "246 chem Ravine Creuse,",
                 "code_postale" => "97440 SAINT-ANDRÉ",
                 "email" => "garcia.ethan974@gmail.com",
-                "tel" => "0692121212",
+                "telephone" => "0692121212",
                 
             ],
 

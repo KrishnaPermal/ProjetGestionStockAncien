@@ -16,7 +16,7 @@ class CommandesSeeder extends Seeder
             [
                 "id" => 1,
                 "id_client" => 1,
-                "commandes_id_commandes" => 1
+                "id_commandes" => 1
             ],
             [
                 "id" => 2,
@@ -27,12 +27,12 @@ class CommandesSeeder extends Seeder
             [
                 "id" => 3,
                 "id_client" => 3,
-                "commandes_id_commandes" => 3
+                "id_commandes" => 3
             ],
             [
                 "id" => 4,
                 "id_client" => 4,
-                "commandes_id_commandes" => 4
+                "id_commandes" => 4
             ],
 
         ];

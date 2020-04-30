@@ -15,33 +15,8 @@ class CategorieSeeder extends Seeder
         $array = [
             [
                 "id" => 1,
-                "categorie" => "Ordinateur portable"
-            ],
-            [
-                "id" => 2,
-                "categorie" => "Ordinateur de Bureau"
-            ],
-            [
-                "id" => 3,
-                "categorie" => "Pièces informatiques"
-            ],
-            [
-                "id" => 4,
-                "categorie" => "Périphérique pc"
-            ],
-            [
-                "id" => 5,
-                "categorie" => "Tablette"
-            ],
-            [
-                "id" => 6,
-                "categorie" => "Réseau"
-            ],
-            [
-                "id" => 6,
-                "categorie" => "Logiciel"
-            ],
-           
+                "categorie" => "2"
+            ],      
             
         ];
 

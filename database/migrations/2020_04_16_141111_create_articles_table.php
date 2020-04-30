@@ -16,20 +16,20 @@ class CreateArticlesTable extends Migration
         
         Schema::create('articles', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('réf_article',255);
+            $table->string('ref_article',255);
             $table->string('designation',255);
             $table->string('description',255);
             $table->string('fournisseur',255);
-            $table->string('quantité',255);
+            $table->string('quantite',255);
             $table->string('prix',255);
             $table->string('photo');
-            $table->unsignedBigInteger('id_catégorie')->unsigned();
+            $table->unsignedBigInteger('id_categorie')->unsigned();
             $table->timestamps();   
     
         });
 
         Schema::table('articles', function (Blueprint $table) {
-            $table->foreign('id_catégorie')->references('id')->on('categorie');
+            $table->foreign('id_categorie')->references('id')->on('articles');
         });
 
     }
@@ -45,8 +45,8 @@ class CreateArticlesTable extends Migration
         
         Schema::table('articles', function (Blueprint $table) {
             Schema::disableForeignKeyConstraints();
-            $table->dropForeign(['id_catégorie']);
-            $table->dropIfExists('id_catégorie');
+            $table->dropForeign(['id_categorie']);
+            $table->dropIfExists('id_categorie');
         });
 
 
