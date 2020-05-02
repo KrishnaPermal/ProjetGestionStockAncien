@@ -17,6 +17,7 @@ export default {
                 sortable: false,
                 value: "id"
             },
+            { text: "id", value: "id" },
             { text: "réf_article", value: "réf_article" },
             { text: "designation", value: "designation" },
             { text: "description", value: "description" },

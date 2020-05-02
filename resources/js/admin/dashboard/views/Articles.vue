@@ -1,6 +1,6 @@
 <template>
 <div width="89%">
-  <v-data-table :headers="headers" :items="articles" sort-by="" class="elevation-1">
+  <v-data-table :headers="headers" :items="articles" sort-by="calories" class="elevation-1">
 
     <template v-slot:top>
       <v-toolbar flat color="cyan darken-3">
