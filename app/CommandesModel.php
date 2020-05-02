@@ -6,6 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Commandes extends Model
 {
+    
+    protected $table = 'commandes';
+    protected $fillable = ['id_client','id_commandes'];
+    public $timestamps = false;
+
+
     public function client()
     {
         return $this->belongsTo('App\Client');
