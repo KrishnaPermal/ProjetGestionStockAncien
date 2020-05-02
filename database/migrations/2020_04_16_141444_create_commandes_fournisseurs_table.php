@@ -25,7 +25,7 @@ class CreateCommandesFournisseursTable extends Migration
         });   
 
         Schema::table('commandes_fournisseurs', function (Blueprint $table) {
-            $table->foreign('id_fournisseur')->references('id')->on('fournisseur');
+            $table->foreign('id_fournisseur')->references('id')->on('commandes_fournisseurs');
         });
     }
 

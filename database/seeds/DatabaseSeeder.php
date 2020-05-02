@@ -16,11 +16,12 @@ class DatabaseSeeder extends Seeder
             ArticlesSeeder::class,
             CategorieSeeder::class,
             ClientsSeeder::class,
-            CommandesFournisseursSeeder::class,
             CommandesSeeder::class,
             FournisseurSeeder::class,
-            Commandes_has_articlesSeeder::class,
+            CommandesFournisseursSeeder::class,
             CommandesFASeeder::class,
+            Commandes_has_articlesSeeder::class,
+            
             ]);
     }
 }
