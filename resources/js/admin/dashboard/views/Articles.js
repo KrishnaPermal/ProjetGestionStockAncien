@@ -1,13 +1,13 @@
 import Axios from "axios";
-import addArticles from "./components/addArticles.vue";
-import editArticles from "./components/editArticles.vue";
-import deleteArticles from "./components/deleteArticles.vue";
+import addProduct from "./components/addProduct.vue";
+import editProduct from "./components/editProduct.vue";
+import deleteProduct from "./components/deleteProduct.vue";
 
 export default {
     components: {
-        addArticles,
-        editArticles,
-        deleteArticles,
+        addProduct,
+        editProduct,
+        deleteProduct,
     },
     data: () => ({
         dialog: false,

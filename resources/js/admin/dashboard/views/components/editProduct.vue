@@ -44,4 +44,4 @@
       </v-card>
     </v-dialog>
 </template>
-<script src="./editArticles.js"/>
+<script src="./editProduct.js"/>

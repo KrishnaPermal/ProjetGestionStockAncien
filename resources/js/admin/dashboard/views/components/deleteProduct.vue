@@ -3,4 +3,4 @@
     <v-icon>mdi-delete</v-icon>
   </v-btn>
 </template>
-<script src="./deleteArticles.js"/>
+<script src="./deleteProduct.js"/>

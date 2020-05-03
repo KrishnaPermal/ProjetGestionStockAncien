@@ -49,4 +49,4 @@
   </v-dialog>
 </template>
 
-<script src="./addArticles.js"/>
+<script src="./addProduct.js"/>

@@ -11,6 +11,7 @@ export default {
             fournisseur: '',
             quantité: '',
             prix: '',
+            photo:'',
         }
     },
 
@@ -24,6 +25,7 @@ export default {
                     fournisseur: this.fournisseur,
                     quantité: this.quantité,
                     prix: this.prix,
+                    photo: this.photo,
                 })
                 .then(response => {
                     if (response.status === 201) {
