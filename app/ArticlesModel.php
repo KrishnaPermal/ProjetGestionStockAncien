@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Articles extends Model
 {
     protected $table = 'articles';
-    protected $fillable = ['id','ref_article','designation','description','fournisseur','quantite','prix','photo','id_categorie'];
+    protected $fillable = ['id','ref_article','marque','description','fournisseur','quantite','prix','image','id_categorie'];
     public $timestamps = false;
 
 
@@ -28,3 +28,5 @@ class Articles extends Model
         return $this->belongsToMany('App\CommandesFournisseurs','commandesFA');
     }
 }
+
+

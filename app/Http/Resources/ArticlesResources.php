@@ -17,11 +17,12 @@ class ArticlesResources extends JsonResource
         return [
             'id' => $this->id,
             'réf_articles' => $this->réf_articles,
-            'designation' => $this->designation,
+            'marque' => $this->marque,
             'description' => $this->description,
             'fournisseur' => $this->fournisseur,
-            'quantité' => $this->quantité,
+            'quantite' => $this->quantite,
             'prix' => $this->prix,
+            'image' => $this->image,
         ];
     }
 }

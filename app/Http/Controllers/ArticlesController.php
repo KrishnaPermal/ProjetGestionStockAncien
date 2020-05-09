@@ -7,7 +7,7 @@ use App\Http\Resources\ArticlesResources;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class ActivitiesController extends Controller
+class ArticlesController extends Controller
 {
     /**
      *  Affichage des Articles
@@ -27,16 +27,20 @@ class ActivitiesController extends Controller
      */
     function add(Request $request)
     {
+        
         //Validation des données
         $data = Validator::make(
             $request->input(),
             [
+                "id" => "required",
                 "ref_article" => "required",
                 "designation" => "required",
                 "description" => "required",
                 "fournisseur" => "required",
                 "quantite" => "required",
                 "prix" => "required",
+                "photo" => "required",
+                "id_categorie" => "required",
             ],
             [
                 'required' => 'Le champ :attribute est requis'
@@ -44,8 +48,8 @@ class ActivitiesController extends Controller
         )->validate();
 
         //Ajout en bdd des données validées
-        $addArticle = Articles::create($data);
-        return new ArticlesResources($addArticle);
+        $addArticle = Articles::create($data)->save();
+        return $addArticle;
     }
 
     /**
@@ -68,12 +72,15 @@ class ActivitiesController extends Controller
         $dataEdit = Validator::make(
             $request->input(),
             [
+                "id" => "required",
                 "ref_article" => "required",
                 "designation" => "required",
                 "description" => "required",
                 "fournisseur" => "required",
                 "quantite" => "required",
                 "prix" => "required",
+                "photo" => "required",
+                "id_categorie" => "required",
             ],
             [
                 'required' => 'Le champ :attribute est requis'

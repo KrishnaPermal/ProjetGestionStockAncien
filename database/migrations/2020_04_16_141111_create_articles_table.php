@@ -17,12 +17,12 @@ class CreateArticlesTable extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('ref_article',255);
-            $table->string('designation',255);
+            $table->string('marque',255);
             $table->string('description',255);
             $table->string('fournisseur',255);
             $table->string('quantite',255);
             $table->string('prix',255);
-            $table->string('photo');
+            $table->string('image');
             $table->unsignedBigInteger('id_categorie')->unsigned();
             $table->timestamps();   
     

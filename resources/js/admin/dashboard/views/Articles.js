@@ -1,30 +1,30 @@
 import Axios from "axios";
-import addProduct from "./components/addProduct.vue";
-import editProduct from "./components/editProduct.vue";
-import deleteProduct from "./components/deleteProduct.vue";
+import addArticle from "./components/addArticle.vue";
+import editArticle from "./components/editArticle.vue";
+import deleteArticle from "./components/deleteArticle.vue";
 
 export default {
     components: {
-        addProduct,
-        editProduct,
-        deleteProduct,
+        addArticle,
+        editArticle,
+        deleteArticle,
     },
     data: () => ({
         dialog: false,
         headers: [{
-                text: "Articles",
+                text: "Matériels",
                 align: "start",
                 sortable: false,
                 value: "id"
             },
             { text: "id", value: "id" },
             { text: "réf_article", value: "réf_article" },
-            { text: "designation", value: "designation" },
+            { text: "marque", value: "marque" },
             { text: "description", value: "description" },
             { text: "fournisseur", value: "fournisseur" },
             { text: "quantité", value: "quantité" },
             { text: "prix", value: "prix" },
-            { text: "photo", value: "photo" },
+            { text: "image", value: "image" },
             { text: "actions", value: "actions" },
 
 

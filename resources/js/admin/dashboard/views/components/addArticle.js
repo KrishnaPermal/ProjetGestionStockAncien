@@ -6,12 +6,12 @@ export default {
             dialog: false,
             id: '',
             réf_article: '',
-            designation: '',
+            marque: '',
             description: '',
             fournisseur: '',
             quantité: '',
             prix: '',
-            photo:'',
+            image:'',
         }
     },
 
@@ -20,17 +20,17 @@ export default {
             Axios.post('../api/dashboard/articles', {
                     id: this.id,
                     réf_article: this.réf_article,
-                    designation: this.designation,
+                    marque: this.marque,
                     description: this.description,
                     fournisseur: this.fournisseur,
                     quantité: this.quantité,
                     prix: this.prix,
-                    photo: this.photo,
+                    image: this.image,
                 })
                 .then(response => {
                     if (response.status === 201) {
                         console.log("Articles bien enregistrée")
-                        this.$emit('addArticles', response.data.data)
+                        this.$emit('addProduct', response.data.data)
                     }
                 })
                 .catch(response => {

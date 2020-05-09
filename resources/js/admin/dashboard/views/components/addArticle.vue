@@ -21,7 +21,7 @@
               <v-text-field color="cyan lighten-2" v-model="réf_articles" label="référence de l'article*" required></v-text-field>
             </v-col>
             <v-col cols="12" sm="6" md="4">
-              <v-text-field color="cyan lighten-2" v-model="designation" label="Designation*" required></v-text-field>
+              <v-text-field color="cyan lighten-2" v-model="marque" label="marque*" required></v-text-field>
             </v-col>
             <v-col cols="12" sm="6" md="4">
               <v-text-field color="cyan lighten-2" v-model="description" label="Description*" required></v-text-field>
@@ -34,6 +34,9 @@
             </v-col>
             <v-col cols="12" sm="6" md="4">
               <v-text-field color="cyan lighten-2" v-model="prix" label="Prix*" required></v-text-field>
+            </v-col>
+            <v-col cols="12" sm="6" md="4">
+              <v-text-field color="cyan lighten-2" v-model="image"  label="Image*"></v-text-field>
             </v-col>
           </v-row>
         </v-container>

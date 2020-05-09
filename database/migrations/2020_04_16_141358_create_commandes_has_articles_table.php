@@ -46,7 +46,7 @@ class CreateCommandesHasArticlesTable extends Migration
             $table->dropIfExists('id_commandes');
         });
 
-        Schema::table('echanges', function (Blueprint $table) {
+        Schema::table('commandes_has_articles', function (Blueprint $table) {
             $table->dropForeign(['id_article']);
             $table->dropIfExists('id_article');
         });
